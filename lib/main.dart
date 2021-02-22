@@ -131,22 +131,28 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
               ],
             ),
+            Container(
+              margin: EdgeInsets.all(8),
+              child: Align(
+                alignment: Alignment.topRight,
+                child: FloatingActionButton(
+                  child: Icon(Icons.favorite),
+                  backgroundColor: Colors.white,
+                  foregroundColor: fabColor,
+                  onPressed: () {
+                    setState(() {
+                      if (fabColor == Colors.grey) {
+                        fabColor = Colors.amber;
+                      } else {
+                        fabColor = Colors.grey;
+                      }
+                    });
+                  },
+                ),
+              ),
+            )
           ],
         ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.favorite),
-        backgroundColor: Colors.white,
-        foregroundColor: fabColor,
-        onPressed: () {
-          setState(() {
-            if (fabColor == Colors.grey) {
-              fabColor = Colors.amber;
-            } else {
-              fabColor = Colors.grey;
-            }
-          });
-        },
       ),
     );
   }
