@@ -101,7 +101,7 @@ class _HomeState extends State<Home> {
                           height: 12,
                         ),
                         Text(
-                          'Honey gets its sweetness from the monosaccharides fructose and glucose, and has about the same relative sweetness as sucrose (table sugar). Fifteen millilitres (1 US tablespoon) of honey provides around 190 kilojoules (46 kilocalories) of food energy.[6] It has attractive chemical properties for baking and a distinctive flavor when used as a sweetener. Most microorganisms do not grow in honey, so sealed honey does not spoil, even after thousands of years.',
+                          'Honey gets its sweetness from the monosaccharides fructose and glucose, and has about the same relative sweetness as sucrose (table sugar). Fifteen millilitres (1 US tablespoon) of honey provides around 190 kilojoules (46 kilocalories) of food energy. It has attractive chemical properties for baking and a distinctive flavor when used as a sweetener. Most microorganisms do not grow in honey, so sealed honey does not spoil, even after thousands of years.',
                           textAlign: TextAlign.justify,
                         ),
                         SizedBox(
