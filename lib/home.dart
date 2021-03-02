@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:transparent_image/transparent_image.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -10,6 +11,19 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      floatingActionButton: Align(
+        alignment: Alignment.bottomRight,
+        child: FloatingActionButton.extended(
+          heroTag: 'bookButton',
+          onPressed: () {
+            Navigator.pushNamed(context, '/order');
+          },
+          label: Text("Order"),
+          icon: Icon(Icons.attach_money),
+          backgroundColor: Colors.white,
+          foregroundColor: Colors.grey[800],
+        ),
+      ),
       appBar: AppBar(
         title: Text(
           "Mission 1",
@@ -33,8 +47,11 @@ class _HomeState extends State<Home> {
               children: <Widget>[
                 Flexible(
                   flex: 2,
-                  child: Image.network(
-                      'https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/gettyimages-183354852-1558479028.jpg'),
+                  child: FadeInImage.memoryNetwork(
+                    placeholder: kTransparentImage,
+                    image:
+                        'https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/gettyimages-183354852-1558479028.jpg',
+                  ),
                 ),
                 Flexible(
                   flex: 1,
@@ -47,32 +64,44 @@ class _HomeState extends State<Home> {
                           flex: 1,
                           child: ClipRRect(
                             borderRadius: BorderRadius.circular(8),
-                            child: Image.network(
-                                'https://digitalcontent.api.tesco.com/v2/media/ghs/f6734d64-c93d-45a3-ba91-1cd64717673f/snapshotimagehandler_1776212331.jpeg?h=540&w=540'),
+                            child: FadeInImage.memoryNetwork(
+                              placeholder: kTransparentImage,
+                              image:
+                                  'https://digitalcontent.api.tesco.com/v2/media/ghs/f6734d64-c93d-45a3-ba91-1cd64717673f/snapshotimagehandler_1776212331.jpeg?h=540&w=540',
+                            ),
                           ),
                         ),
                         Flexible(
                           flex: 1,
                           child: ClipRRect(
                             borderRadius: BorderRadius.circular(8),
-                            child: Image.network(
-                                'https://digitalcontent.api.tesco.com/v2/media/ghs/f6734d64-c93d-45a3-ba91-1cd64717673f/snapshotimagehandler_1776212331.jpeg?h=540&w=540'),
+                            child: FadeInImage.memoryNetwork(
+                              placeholder: kTransparentImage,
+                              image:
+                                  'https://digitalcontent.api.tesco.com/v2/media/ghs/f6734d64-c93d-45a3-ba91-1cd64717673f/snapshotimagehandler_1776212331.jpeg?h=540&w=540',
+                            ),
                           ),
                         ),
                         Flexible(
                           flex: 1,
                           child: ClipRRect(
                             borderRadius: BorderRadius.circular(8),
-                            child: Image.network(
-                                'https://digitalcontent.api.tesco.com/v2/media/ghs/f6734d64-c93d-45a3-ba91-1cd64717673f/snapshotimagehandler_1776212331.jpeg?h=540&w=540'),
+                            child: FadeInImage.memoryNetwork(
+                              placeholder: kTransparentImage,
+                              image:
+                                  'https://digitalcontent.api.tesco.com/v2/media/ghs/f6734d64-c93d-45a3-ba91-1cd64717673f/snapshotimagehandler_1776212331.jpeg?h=540&w=540',
+                            ),
                           ),
                         ),
                         Flexible(
                           flex: 1,
                           child: ClipRRect(
                             borderRadius: BorderRadius.circular(8),
-                            child: Image.network(
-                                'https://digitalcontent.api.tesco.com/v2/media/ghs/f6734d64-c93d-45a3-ba91-1cd64717673f/snapshotimagehandler_1776212331.jpeg?h=540&w=540'),
+                            child: FadeInImage.memoryNetwork(
+                              placeholder: kTransparentImage,
+                              image:
+                                  'https://digitalcontent.api.tesco.com/v2/media/ghs/f6734d64-c93d-45a3-ba91-1cd64717673f/snapshotimagehandler_1776212331.jpeg?h=540&w=540',
+                            ),
                           ),
                         ),
                       ],
@@ -126,13 +155,15 @@ class _HomeState extends State<Home> {
                   backgroundColor: Colors.white,
                   foregroundColor: fabColor,
                   onPressed: () {
-                    setState(() {
-                      if (fabColor == Colors.grey) {
-                        fabColor = Colors.amber;
-                      } else {
-                        fabColor = Colors.grey;
-                      }
-                    });
+                    setState(
+                      () {
+                        if (fabColor == Colors.grey) {
+                          fabColor = Colors.amber;
+                        } else {
+                          fabColor = Colors.grey;
+                        }
+                      },
+                    );
                   },
                 ),
               ),

@@ -1,4 +1,5 @@
 import 'package:amad_misson_1/home.dart';
+import 'package:amad_misson_1/order.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -10,7 +11,11 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Home(),
+      initialRoute: '/',
+      routes: {
+        '/': (context) => Home(),
+        '/order': (context) => Order(),
+      },
     );
   }
 }
